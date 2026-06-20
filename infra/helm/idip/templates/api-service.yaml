@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "idip.fullname" . }}-api-lb
+  labels:
+    {{- include "idip.labels" . | nindent 4 }}
+    app.kubernetes.io/component: api
+spec:
+  type: {{ .Values.service.api.type }}
+  ports:
+    - port: {{ .Values.service.api.port }}
+      targetPort: {{ .Values.service.api.targetPort }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "idip.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: api
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "idip.fullname" . }}-api-internal
+  labels:
+    {{- include "idip.labels" . | nindent 4 }}
+    app.kubernetes.io/component: api
+spec:
+  type: {{ .Values.service.internal.type }}
+  ports:
+    - port: {{ .Values.service.internal.port }}
+      targetPort: {{ .Values.service.internal.targetPort }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "idip.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: api

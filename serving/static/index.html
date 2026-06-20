@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDIP Dashboard | Intelligent Document Intelligence Platform</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-card: rgba(30, 41, 59, 0.7);
+      --bg-card-hover: rgba(30, 41, 59, 0.9);
+      --primary: #06b6d4; /* Cyan */
+      --primary-glow: rgba(6, 182, 212, 0.3);
+      --secondary: #8b5cf6; /* Violet */
+      --secondary-glow: rgba(139, 92, 246, 0.3);
+      --accent: #10b981; /* Emerald Green */
+      --accent-glow: rgba(16, 185, 129, 0.3);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(6, 182, 212, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    /* Header Design */
+    header {
+      backdrop-filter: blur(12px);
+      background: rgba(15, 23, 42, 0.6);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-glow {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 12px var(--primary);
+      animation: pulse 2s infinite;
+    }
+
+    h1.brand {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, var(--text-main) 30%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: var(--accent);
+      padding: 0.35rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.05);
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--accent);
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      max-width: 1280px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* Tab Controls */
+    .tab-bar {
+      display: flex;
+      gap: 0.5rem;
+      background: rgba(30, 41, 59, 0.4);
+      padding: 0.35rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      width: fit-content;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: var(--bg-dark);
+      font-weight: 600;
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    /* Tab Panel States */
+    .tab-panel {
+      display: none;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Grid Layouts */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Component Cards */
+    .card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, var(--text-main) 60%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Forms Elements */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: var(--text-main);
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px var(--primary-glow);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--primary) 0%, #0891b2 100%);
+      color: var(--bg-dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: 10px;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 12px var(--primary-glow);
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--primary-glow);
+      filter: brightness(1.1);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      box-shadow: none;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-accent {
+      background: linear-gradient(135deg, var(--secondary) 0%, #7c3aed 100%);
+      color: var(--text-main);
+      box-shadow: 0 4px 12px var(--secondary-glow);
+    }
+
+    .btn-accent:hover {
+      box-shadow: 0 6px 20px var(--secondary-glow);
+    }
+
+    /* Drop Zone Ingest */
+    .dropzone {
+      border: 2px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      background: rgba(15, 23, 42, 0.3);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .dropzone.dragover {
+      border-color: var(--primary);
+      background: rgba(6, 182, 212, 0.05);
+    }
+
+    .dropzone svg {
+      width: 48px;
+      height: 48px;
+      color: var(--text-muted);
+      transition: color 0.3s ease;
+    }
+
+    .dropzone:hover svg {
+      color: var(--primary);
+    }
+
+    .file-input {
+      display: none;
+    }
+
+    /* Output Display Box */
+    .output-box {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.25rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+      color: #38bdf8;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      max-height: 400px;
+      height: 100%;
+    }
+
+    /* System Telemetry stats */
+    .telemetry-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .telemetry-item {
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .telemetry-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 0.25rem;
+    }
+
+    .telemetry-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* RAG Pipeline Response */
+    .response-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    .response-body {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .confidence-meter {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      font-size: 0.9rem;
+    }
+
+    .confidence-bar-outer {
+      flex: 1;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .confidence-bar-inner {
+      height: 100%;
+      background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+      width: 0%;
+      transition: width 1s ease-out;
+    }
+
+    .citation-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .citation-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    .citation-tag {
+      background: var(--secondary-glow);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+
+    /* Key Animations */
+    @keyframes pulse {
+      0% { box-shadow: 0 0 12px var(--primary); }
+      50% { box-shadow: 0 0 20px var(--primary), 0 0 8px #0891b2; }
+      100% { box-shadow: 0 0 12px var(--primary); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Loading Indicator */
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid rgba(255, 255, 255, 0.2);
+      border-top-color: var(--bg-dark);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      display: inline-block;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <div class="logo-glow"></div>
+      <h1 class="brand">IDIP Monorepo Platform</h1>
+    </div>
+    <div class="status-badge" id="system-status-badge">
+      <div class="status-dot"></div>
+      <span id="system-status-text">Health: Checking...</span>
+    </div>
+  </header>
+
+  <!-- Main Portal -->
+  <main>
+    <!-- Tab Controls -->
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('query-tab')">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        RAG Query Pipeline
+      </button>
+      <button class="tab-btn" onclick="switchTab('ingest-tab')">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+        Document Ingestion
+      </button>
+      <button class="tab-btn" onclick="switchTab('abtest-tab')">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z"></path></svg>
+        MLOps & A/B Testing
+      </button>
+    </div>
+
+    <!-- Panel 1: RAG Query Panel -->
+    <div id="query-tab" class="tab-panel active">
+      <div class="dashboard-grid">
+        <div class="card">
+          <h2 class="card-title">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 .364l-.707 .707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548 .547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+            Execute Semantic Query
+          </h2>
+          <form id="query-form" onsubmit="handleQuery(event)">
+            <div class="form-group">
+              <label for="query-input">Search Query / Prompt</label>
+              <textarea id="query-input" rows="3" placeholder="Enter query string (e.g. Ask details about ACME invoice, system metrics...)" required></textarea>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label for="query-k">Top K Chunks</label>
+                <input type="number" id="query-k" value="3" min="1" max="10">
+              </div>
+              <div class="form-group">
+                <label for="query-source">Source Type Filter</label>
+                <select id="query-source">
+                  <option value="">All Source Types</option>
+                  <option value="pdf">PDF Documents</option>
+                  <option value="image">Images</option>
+                  <option value="json">JSON Metadata</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn" id="query-submit-btn">
+              <span>Run RAG Pipeline</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Telemetry Stats -->
+        <div class="card" style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <h2 class="card-title">System Telemetry</h2>
+          <div class="telemetry-row">
+            <div class="telemetry-item">
+              <div class="telemetry-label">Uptime</div>
+              <div class="telemetry-value" id="stat-uptime">0s</div>
+            </div>
+            <div class="telemetry-item">
+              <div class="telemetry-label">DB Status</div>
+              <div class="telemetry-value" id="stat-db" style="color: var(--accent);">OK</div>
+            </div>
+          </div>
+          <div class="telemetry-row">
+            <div class="telemetry-item">
+              <div class="telemetry-label">LLM Core</div>
+              <div class="telemetry-value" id="stat-llm" style="font-size: 0.9rem; margin-top: 0.5rem; word-break: break-all;">Mistral-7B</div>
+            </div>
+            <div class="telemetry-item">
+              <div class="telemetry-label">Cache</div>
+              <div class="telemetry-value" id="stat-redis" style="color: var(--accent);">OK</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Output Result RAG -->
+      <div class="card" id="query-result-card" style="margin-top: 1.5rem; display: none;">
+        <div class="response-header">
+          <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.15rem;">RAG Pipeline Output</h3>
+          <div class="confidence-meter">
+            <span>Confidence: <strong id="confidence-pct">0%</strong></span>
+            <div class="confidence-bar-outer">
+              <div class="confidence-bar-inner" id="confidence-bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="response-body" id="query-response-text"></div>
+        <h4 style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem; text-transform: uppercase; font-weight: 700;">Retrieved Citations & Context</h4>
+        <div class="citation-list" id="query-citation-list"></div>
+      </div>
+    </div>
+
+    <!-- Panel 2: Document Ingestion Panel -->
+    <div id="ingest-tab" class="tab-panel">
+      <div class="dashboard-grid">
+        <div class="card">
+          <h2 class="card-title">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707 .293l5.414 5.414a1 1 0 01.293 .707V19a2 2 0 01-2 2z"></path></svg>
+            Ingest Raw Document
+          </h2>
+          <form id="ingest-form" onsubmit="handleIngest(event)">
+            <div class="form-group">
+              <label>File Upload</label>
+              <div class="dropzone" id="dropzone" onclick="document.getElementById('file-field').click()">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                <p id="dropzone-text">Drag & drop document here, or click to browse</p>
+                <p style="font-size: 0.75rem; color: var(--text-muted);">PDF, PNG, JPEG, TIFF, JSON, TXT (Max 50MB)</p>
+                <input type="file" id="file-field" class="file-input" onchange="updateFileLabel(this)" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="meta-uri">Source URI</label>
+              <input type="text" id="meta-uri" placeholder="e.g. s3://bucket/path/invoice.pdf">
+            </div>
+            <div class="form-group">
+              <label for="meta-type">Source File Category</label>
+              <select id="meta-type">
+                <option value="pdf">PDF Document</option>
+                <option value="image">Scanned Image</option>
+                <option value="json">Structured JSON</option>
+                <option value="txt">Plain Text</option>
+              </select>
+            </div>
+            <button type="submit" class="btn" id="ingest-submit-btn">
+              <span>Ingest Document</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="card" style="display: flex; flex-direction: column;">
+          <h2 class="card-title">Ingestion Log / Response</h2>
+          <div class="output-box" id="ingest-output-box">No ingestion tasks triggered yet. Waiting for input...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 3: MLOps & A/B Testing Panel -->
+    <div id="abtest-tab" class="tab-panel">
+      <div class="dashboard-grid">
+        <div class="card" style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <h2 class="card-title">Administrative Actions</h2>
+          <div class="form-group">
+            <label for="admin-key">Admin Secret Key</label>
+            <input type="password" id="admin-key" value="super-admin-secret-key">
+          </div>
+          <div style="display: flex; gap: 1rem;">
+            <button class="btn btn-accent" onclick="triggerRetrain()">
+              Trigger Retraining Job
+            </button>
+            <button class="btn btn-secondary" onclick="triggerEvaluate()">
+              Trigger RAGAS Evaluation
+            </button>
+          </div>
+        </div>
+
+        <div class="card" style="display: flex; flex-direction: column;">
+          <h2 class="card-title">Console Log</h2>
+          <div class="output-box" id="admin-output-box">Waiting for administrative pipeline triggers...</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Dynamic JWT Token Generation for API Authorization
+    async function generateJWT(api_key = "anonymous", secret = "idip_secret_key_1234567890") {
+      const header = { alg: "HS256", typ: "JWT" };
+      const payload = {
+        sub: api_key,
+        api_key: api_key,
+        exp: Math.floor(Date.now() / 1000) + 3600
+      };
+
+      const base64UrlEncode = (obj) => {
+        const str = JSON.stringify(obj);
+        const base64 = btoa(unescape(encodeURIComponent(str)));
+        return base64.replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
+      };
+
+      const headerB64 = base64UrlEncode(header);
+      const payloadB64 = base64UrlEncode(payload);
+      const signingInput = `${headerB64}.${payloadB64}`;
+
+      const enc = new TextEncoder();
+      const keyData = enc.encode(secret);
+      const messageData = enc.encode(signingInput);
+
+      const key = await crypto.subtle.importKey(
+        "raw",
+        keyData,
+        { name: "HMAC", hash: { name: "SHA-256" } },
+        false,
+        ["sign"]
+      );
+
+      const signature = await crypto.subtle.sign(
+        "HMAC",
+        key,
+        messageData
+      );
+
+      const signatureB64 = btoa(String.fromCharCode(...new Uint8Array(signature)))
+        .replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
+
+      return `${signingInput}.${signatureB64}`;
+    }
+
+    // Tab switching logic
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+
+    // Drag-over styling helper
+    const dropzone = document.getElementById('dropzone');
+    dropzone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropzone.classList.add('dragover');
+    });
+    dropzone.addEventListener('dragleave', () => {
+      dropzone.classList.remove('dragover');
+    });
+    dropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('dragover');
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        document.getElementById('file-field').files = files;
+        updateFileLabel(document.getElementById('file-field'));
+      }
+    });
+
+    function updateFileLabel(input) {
+      const dropzoneText = document.getElementById('dropzone-text');
+      if (input.files.length > 0) {
+        dropzoneText.innerText = "Selected: " + input.files[0].name;
+        dropzoneText.style.color = "var(--primary)";
+      } else {
+        dropzoneText.innerText = "Drag & drop document here, or click to browse";
+        dropzoneText.style.color = "var(--text-muted)";
+      }
+    }
+
+    // Call Health Check regularly
+    async function checkHealth() {
+      try {
+        const res = await fetch('/v1/health');
+        if (res.ok) {
+          const data = await res.json();
+          document.getElementById('system-status-text').innerText = 'Health: ' + data.status.toUpperCase();
+          document.getElementById('system-status-badge').style.background = 'rgba(16, 185, 129, 0.1)';
+          document.getElementById('system-status-badge').style.color = 'var(--accent)';
+          document.getElementById('system-status-badge').style.borderColor = 'rgba(16, 185, 129, 0.2)';
+          
+          document.getElementById('stat-uptime').innerText = data.uptime_s + 's';
+          document.getElementById('stat-db').innerText = data.dependencies.database.toUpperCase();
+          document.getElementById('stat-redis').innerText = data.dependencies.redis.toUpperCase();
+          document.getElementById('stat-llm').innerText = data.model_versions.llm.split('/').pop();
+        } else {
+          setHealthOffline();
+        }
+      } catch (err) {
+        setHealthOffline();
+      }
+    }
+
+    function setHealthOffline() {
+      document.getElementById('system-status-text').innerText = 'Health: DEGRADED';
+      document.getElementById('system-status-badge').style.background = 'rgba(239, 68, 68, 0.1)';
+      document.getElementById('system-status-badge').style.color = '#ef4444';
+      document.getElementById('system-status-badge').style.borderColor = 'rgba(239, 68, 68, 0.2)';
+      document.getElementById('stat-db').innerText = 'ERROR';
+      document.getElementById('stat-redis').innerText = 'ERROR';
+    }
+
+    setInterval(checkHealth, 5000);
+    checkHealth();
+
+    // Submit RAG query pipeline
+    async function handleQuery(event) {
+      event.preventDefault();
+      
+      const queryInput = document.getElementById('query-input').value;
+      const k = parseInt(document.getElementById('query-k').value);
+      const filterSource = document.getElementById('query-source').value;
+      
+      const submitBtn = document.getElementById('query-submit-btn');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<div class="spinner"></div> <span>Processing query...</span>';
+
+      const payload = {
+        query: queryInput,
+        top_k: k
+      };
+      
+      if (filterSource) {
+        payload.filters = { source_type: filterSource };
+      }
+
+      try {
+        const token = await generateJWT();
+        const response = await fetch('/v1/query', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          document.getElementById('query-result-card').style.display = 'block';
+          document.getElementById('query-response-text').innerText = data.answer;
+          
+          const confidencePct = Math.round(data.confidence * 100);
+          document.getElementById('confidence-pct').innerText = confidencePct + '%';
+          document.getElementById('confidence-bar').style.width = confidencePct + '%';
+
+          const citationList = document.getElementById('query-citation-list');
+          citationList.innerHTML = '';
+          
+          if (data.citations && data.citations.length > 0) {
+            data.citations.forEach((citation, idx) => {
+              const div = document.createElement('div');
+              div.className = 'citation-card';
+              div.innerHTML = `
+                <p style="margin-bottom: 0.25rem;">
+                  <span class="citation-tag">[Citation ${idx+1}]</span> 
+                  <strong>Doc ID:</strong> ${citation.doc_id} | 
+                  <strong>Confidence:</strong> ${Math.round(citation.score * 100)}%
+                </p>
+                <blockquote style="border-left: 2px solid var(--primary); padding-left: 0.75rem; color: var(--text-muted); font-size: 0.8rem; font-style: italic; margin-top: 0.25rem;">
+                  "${citation.text || ''}"
+                </blockquote>
+              `;
+              citationList.appendChild(div);
+            });
+          } else {
+            citationList.innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem;">No citations available.</p>';
+          }
+          
+          // Scroll to result
+          document.getElementById('query-result-card').scrollIntoView({ behavior: 'smooth' });
+        } else {
+          alert('Query execution failed: ' + response.statusText);
+        }
+      } catch (err) {
+        alert('Query failed: ' + err);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
+    }
+
+    // Submit raw document ingestion
+    async function handleIngest(event) {
+      event.preventDefault();
+      
+      const fileInput = document.getElementById('file-field');
+      const uri = document.getElementById('meta-uri').value || 'upload://' + fileInput.files[0].name;
+      const type = document.getElementById('meta-type').value;
+
+      const submitBtn = document.getElementById('ingest-submit-btn');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<div class="spinner"></div> <span>Uploading...</span>';
+
+      const formData = new FormData();
+      formData.append('file', fileInput.files[0]);
+      
+      const metadata = {
+        source_type: type,
+        source_uri: uri
+      };
+      formData.append('metadata', JSON.stringify(metadata));
+
+      try {
+        const token = await generateJWT();
+        const response = await fetch('/v1/documents/ingest', {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer ' + token
+          },
+          body: formData
+        });
+
+        const outputBox = document.getElementById('ingest-output-box');
+        if (response.ok) {
+          const data = await response.json();
+          outputBox.innerHTML = JSON.stringify(data, null, 2);
+          outputBox.style.color = '#34d399'; // Green success color
+        } else {
+          const errData = await response.json().catch(() => ({}));
+          outputBox.innerHTML = "Error " + response.status + ": " + (errData.message || response.statusText);
+          outputBox.style.color = '#f87171'; // Red color
+        }
+      } catch (err) {
+        document.getElementById('ingest-output-box').innerHTML = "Upload failed: " + err;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
+    }
+
+    // Administrative Trigger Retraining Job
+    async function triggerRetrain() {
+      const key = document.getElementById('admin-key').value;
+      const outputBox = document.getElementById('admin-output-box');
+      
+      try {
+        const response = await fetch('/v1/admin/retrain', {
+          method: 'POST',
+          headers: {
+            'X-Admin-Key': key
+          }
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          outputBox.innerHTML = ">> RETRAINING TRIGGERED SUCCESSFULLY\n\n" + JSON.stringify(data, null, 2);
+          outputBox.style.color = '#34d399';
+        } else {
+          const errData = await response.json().catch(() => ({}));
+          outputBox.innerHTML = ">> RETRAINING TRIGGER FAILED (" + response.status + ")\n\n" + (errData.detail || response.statusText);
+          outputBox.style.color = '#f87171';
+        }
+      } catch (err) {
+        outputBox.innerHTML = "Connection failed: " + err;
+      }
+    }
+
+    // Administrative Trigger Evaluation Job
+    async function triggerEvaluate() {
+      const key = document.getElementById('admin-key').value;
+      const outputBox = document.getElementById('admin-output-box');
+      
+      try {
+        const response = await fetch('/v1/admin/evaluate', {
+          method: 'POST',
+          headers: {
+            'X-Admin-Key': key
+          }
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          outputBox.innerHTML = ">> RAGAS EVALUATION COMPLETED\n\n" + JSON.stringify(data, null, 2);
+          outputBox.style.color = '#34d399';
+        } else {
+          const errData = await response.json().catch(() => ({}));
+          outputBox.innerHTML = ">> RAGAS EVALUATION FAILED (" + response.status + ")\n\n" + (errData.detail || response.statusText);
+          outputBox.style.color = '#f87171';
+        }
+      } catch (err) {
+        outputBox.innerHTML = "Connection failed: " + err;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "idip.fullname" . }}-api-pdb
+  labels:
+    {{- include "idip.labels" . | nindent 4 }}
+    app.kubernetes.io/component: api
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      {{- include "idip.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: api

@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "idip.fullname" . }}-worker
+  labels:
+    {{- include "idip.labels" . | nindent 4 }}
+    app.kubernetes.io/component: worker
+spec:
+  replicas: {{ .Values.replicaCount.worker }}
+  selector:
+    matchLabels:
+      {{- include "idip.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: worker
+  template:
+    metadata:
+      labels:
+        {{- include "idip.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: worker
+    spec:
+      nodeSelector:
+        {{- toYaml .Values.worker.nodeSelector | nindent 8 }}
+      tolerations:
+        {{- toYaml .Values.worker.tolerations | nindent 8 }}
+      containers:
+        - name: worker
+          image: "{{ .Values.image.worker.repository }}:{{ .Values.image.worker.tag }}"
+          imagePullPolicy: {{ .Values.image.worker.pullPolicy }}
+          resources:
+            {{- toYaml .Values.resources.worker | nindent 12 }}
+          envFrom:
+            - configMapRef:
+                name: {{ include "idip.fullname" . }}-config
+            - secretRef:
+                name: {{ include "idip.fullname" . }}-secrets

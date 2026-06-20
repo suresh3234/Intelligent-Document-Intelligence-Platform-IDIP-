@@ -1,0 +1,107 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script before a python
+#  application is packaged on a mac, etc.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nosenv/
+.githooks/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+.benchmarks/
+
+# Poetry
+# Keep poetry.lock but ignore virtualenvs if created locally under project root
+.venv/
+venv/
+ENV/
+env/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pyenv
+.python-version
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.development
+.env.staging
+.env.*
+
+# Logs and Databases
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Web frontend & Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+dist/
+.vite/
+
+# MLOps & MLflow
+mlruns/
+**/mlruns/
+.dvc/tmp/
+.dvc/cache/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini

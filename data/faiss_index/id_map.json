@@ -1,0 +1,1378 @@
+{
+  "0": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "1": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "2": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "3": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "4": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "5": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "6": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "7": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "8": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "9": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "10": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "11": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "12": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "13": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "14": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "15": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "16": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "17": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "18": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "19": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "20": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "21": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "22": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "23": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "24": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "25": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "26": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "27": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "28": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "29": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "30": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "31": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "32": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "33": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "34": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "35": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "36": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "37": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "38": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "39": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "40": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "41": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "42": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "43": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "44": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "45": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "46": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "47": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "48": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "49": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "50": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "51": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "52": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "53": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "54": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "55": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "56": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "57": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "58": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "59": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "60": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "61": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "62": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "63": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "64": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "65": {
+    "chunk_id": "e4f7c86f-8907-446e-995c-f73e0fb6e209",
+    "doc_id": "956d19df-98be-4483-9cf5-1bda7a7ffab4",
+    "text": "--- PAGE 1 ---\n\n## SURESH\n \n## D\n\nBangalore, India\n+91-6360106924 | devaramanesuresh@gmail.com | LinkedIn| https://github.com/suresh3234\n\nSUMMARY\n\nEnthusiastic and motivated AIML undergraduate with hands-on experience in Python, SQL, Excel and Power BI. Skilled in data cleaning, exploratory data analysis and dashboard creation. Capable of transforming raw datasets into\nbusiness insights and identifying trends for decision-making. Also experienced in Machine Learning and NLP-based\nproject development.",
+    "chunk_index": 0,
+    "token_count": 117,
+    "char_start": 0,
+    "char_end": 505,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "is_table": true,
+      "source_type": "default",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "66": {
+    "chunk_id": "19409c5a-be0f-443c-af40-de977f7dfe5c",
+    "doc_id": "956d19df-98be-4483-9cf5-1bda7a7ffab4",
+    "text": "Skilled in data cleaning, exploratory data analysis and dashboard creation. Capable of transforming raw datasets into\nbusiness insights and identifying trends for decision-making. Also experienced in Machine Learning and NLP-based\nproject development. TECHNICAL SKILLS\n\nLanguages: Python, SQL,Java\nAnalytics: Data Cleaning, EDA, KPI Analysis, Reporting, Visualization\nTools: Excel, Power BI, MySQL, Jupyter Notebook, Google Colab, Tableau, Looker Studio\nTechnologies: Machine Learning, NLP, Generative AI\nCS Fundamentals: DSA, OS, CN, DBMS\n\nEXPERIENCE\n\nData Analyst Intern — Red Dot Foundation\n\n•\nCleaned and validated social media datasets handling missing and incorrect location data\n•\nAnalyzed engagement metrics to identify audience behaviour trends\n•\nBuilt interactive dashboards in Google Looker Studio\n•\nGenerated reports improving stakeholder understanding of performance metrics\n\nPROJECTS\n\nCustomer Behaviour Analysis — Python, SQL, Power BI\n\n•\nProcessed e-commerce retail dataset using Pandas and SQL queries\n•\nPerformed RFM customer segmentation and purchase trend analysis\n•\nBuilt Power BI dashboard showing sales performance and customer segments\n•\nGenerated insights for marketing and retention strategies\n\nOnline Music Store Data Analysis — SQL\n\n•\nQueried relational database using joins, subqueries and aggregations\n•\nIdentified top customers, revenue cities and popular genres\n•\nCreated business insight reports from transactional data\n\nCyberShield — AI Driven Multi-Layered Threat Detection System\n\n•\nDeveloped ML based anomaly detection model on network traffic data\n•\nApplied NLP techniques to detect phishing emails and malicious text patterns\n•\nIntegrated multi-layer detectionpipeline for security monitoring\n•\nImproved detection accuracy through feature engineering and model tuning\n\nEDUCATION\n\nB.E Artificial Intelligence & Machine Learning\nAcharya Institute of Technology\n\n2022–2026\nCGPA: 8.4\n\nPUC — Nandi International PU College\nSSLC — Vijay Marie School\n\n90.16%\n\n92%\n\nCERTIFICATIONS\n\nPython Fundamentals (Coursera)\n|\nMicrosoft Power BI\n\n|\nWolfram ML Certificate\n\nSOFT SKILLS\n\nAnalytical Thinking, Problem Solving, Communication, Teamwork",
+    "chunk_index": 1,
+    "token_count": 464,
+    "char_start": 254,
+    "char_end": 2420,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "is_table": false,
+      "source_type": "default",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "67": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "68": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "69": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "70": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "71": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "72": {
+    "chunk_id": "95bd0559-8bdb-443a-9d2e-15f5f2bb9420",
+    "doc_id": "2865ba9d-93ee-4ceb-b292-9b83c8abce34",
+    "text": "Total amount is $1500.00. Paid via bank transfer.",
+    "chunk_index": 0,
+    "token_count": 14,
+    "char_start": 0,
+    "char_end": 49,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "is_table": false,
+      "source_type": "default",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "73": {
+    "chunk_id": "96c9bf85-9000-4dda-aced-5fd59a2ee3e0",
+    "doc_id": "5945e623-482d-4385-9ebd-a9769dd4bae2",
+    "text": "Unique file content block.",
+    "chunk_index": 0,
+    "token_count": 5,
+    "char_start": 0,
+    "char_end": 26,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "is_table": false,
+      "source_type": "default",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "74": {
+    "chunk_id": "513a670a-39c0-4d04-b671-deff5cc80ffb",
+    "doc_id": "893a72fb-c703-428a-8c0e-a0dce19780de",
+    "text": "Total amount is $1500.00. Paid via bank transfer.",
+    "chunk_index": 0,
+    "token_count": 14,
+    "char_start": 0,
+    "char_end": 49,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "is_table": false,
+      "source_type": "default",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "75": {
+    "chunk_id": "2a237242-6e47-47e8-a9ec-315e3256db0f",
+    "doc_id": "b65e0d1f-bc6d-4a94-886d-8ab2e65b1adb",
+    "text": "Unique file content block.",
+    "chunk_index": 0,
+    "token_count": 5,
+    "char_start": 0,
+    "char_end": 26,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "is_table": false,
+      "source_type": "default",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "76": {
+    "chunk_id": "6d3886f0-2376-4984-98ff-13052d8c42c7",
+    "doc_id": "57a772e1-78b5-444a-b550-c3a6e1c008be",
+    "text": "--- PAGE 1 ---\nRoheed M\n+91 9008783577\nMsdroheed8537@gmail.com\n\nSummary:\n\nDiploma graduate in Civil Engineering with a strong ability to learn quickly and adapt\nto new challenges. Recognized for problem-solving skills and a proactive approach to\ntasks. Educational Qualifications:\n\n• Diploma In Civil Engineering\nSES Polytechnic Aided College (DTE), Siruguppa, Bellari\n2022 – 2024 | 58.66%\n\n• Class X\nVijayMarie English Medium School, Ballari District\n2021 | 51.32%\n\nExperience:\n\nFresher\nTechnical & Functional skills:\n\nTechnical Skills\n\nBasics of MS Excel, MS Word, MS\nPowerPoint\n\nPersonnel Details:\n\nDOB: 18/05/2004\nPermanent Address: Near Jamiya masjid Ibrampur, Siruguppa(tq)-583121, Ballari\nDist. Languages Proficiency: English, Kannada, Hindi, Telugu\n\nDeclaration:\n\nI hereby declare that the above-mentioned information is correct up to the best of my\nknowledge and I bear the responsibility for the correctness of the above-mentioned\nparticulars. 1",
+    "chunk_index": 0,
+    "token_count": 253,
+    "char_start": 0,
+    "char_end": 955,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "is_table": false,
+      "source_type": "default",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "77": {
+    "chunk_id": "ab32739d-2997-41bb-a5d0-5517fe7a7727",
+    "doc_id": "89ee5693-470e-43ed-af69-cfd0f820ffd9",
+    "text": "Total amount is $1500.00. Paid via bank transfer.",
+    "chunk_index": 0,
+    "token_count": 14,
+    "char_start": 0,
+    "char_end": 49,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "is_table": false,
+      "source_type": "default",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "78": {
+    "chunk_id": "7e7e0d37-2f31-4bb3-83f5-81e2e2305282",
+    "doc_id": "484652c1-98d1-4907-ae75-0ec2262e42af",
+    "text": "Unique file content block.",
+    "chunk_index": 0,
+    "token_count": 5,
+    "char_start": 0,
+    "char_end": 26,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "is_table": false,
+      "source_type": "default",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "79": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "80": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "81": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "82": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "83": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "84": {
+    "chunk_id": "803d0035-4014-4898-99eb-ca28f93e60c7",
+    "doc_id": "26d61742-74cc-4652-b825-98ac31c512cf",
+    "text": "Total amount is $1500.00. Paid via bank transfer.",
+    "chunk_index": 0,
+    "token_count": 14,
+    "char_start": 0,
+    "char_end": 49,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "is_table": false,
+      "source_type": "default",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "85": {
+    "chunk_id": "07c94e5a-9837-46c6-a299-4a989455f075",
+    "doc_id": "3b78bce2-9d62-4c77-9f6d-7a0352346857",
+    "text": "Unique file content block.",
+    "chunk_index": 0,
+    "token_count": 5,
+    "char_start": 0,
+    "char_end": 26,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "is_table": false,
+      "source_type": "default",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "86": {
+    "chunk_id": "chunk_acme-invoice-101_0",
+    "doc_id": "acme-invoice-101",
+    "text": "ACME Corporation Invoice #INV-2026-001. Billing Address: 123 Main St, New York, NY 10001. Total Amount Due: $15,420.50. Payment terms: Net 30 days.",
+    "chunk_index": 0,
+    "token_count": 22,
+    "char_start": 0,
+    "char_end": 147,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "87": {
+    "chunk_id": "chunk_acme-invoice-101_1",
+    "doc_id": "acme-invoice-101",
+    "text": "Itemized services on ACME Corp Invoice #INV-2026-001: Cloud Infrastructure Integration Services ($10,000.00) and MLOps Pipeline Consultation ($5,420.50).",
+    "chunk_index": 1,
+    "token_count": 17,
+    "char_start": 0,
+    "char_end": 153,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "invoice",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "88": {
+    "chunk_id": "chunk_saas-contract-202_0",
+    "doc_id": "saas-contract-202",
+    "text": "This Software-as-a-Service (SaaS) Agreement is signed by John Doe on behalf of Acme Corp and Jane Smith on behalf of IDIP Platform Inc. Effective Date: January 1, 2026.",
+    "chunk_index": 0,
+    "token_count": 28,
+    "char_start": 0,
+    "char_end": 168,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "89": {
+    "chunk_id": "chunk_saas-contract-202_1",
+    "doc_id": "saas-contract-202",
+    "text": "Under section 4.2 of the SaaS Agreement, IDIP Platform Inc. guarantees a 99.9% uptime SLA for all document ingestion and extraction query endpoints.",
+    "chunk_index": 1,
+    "token_count": 23,
+    "char_start": 0,
+    "char_end": 148,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "contract",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  },
+  "90": {
+    "chunk_id": "chunk_idip-report-303_0",
+    "doc_id": "idip-report-303",
+    "text": "Intelligent Document Intelligence Platform (IDIP) performance report: Average document ingestion latency is 45.7ms. Average cold query retrieval latency is 15.4ms.",
+    "chunk_index": 0,
+    "token_count": 20,
+    "char_start": 0,
+    "char_end": 163,
+    "chunk_strategy": "fixed",
+    "metadata": {
+      "source_type": "report",
+      "language": "en",
+      "doc_type_signal": "other"
+    }
+  }
+}

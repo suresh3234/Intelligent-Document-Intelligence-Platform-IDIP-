@@ -1,0 +1,64 @@
+# Stage 1: Build virtualenv and dependencies
+FROM python:3.11-slim as builder
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=0 \
+    POETRY_VERSION=1.8.3 \
+    POETRY_HOME="/opt/poetry" \
+    POETRY_NO_INTERACTION=1 \
+    POETRY_VIRTUALENVS_IN_PROJECT=true
+
+ENV PATH="$POETRY_HOME/bin:$PATH"
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN curl -sSL https://install.python-poetry.org | python3 -
+
+WORKDIR /app
+COPY pyproject.toml poetry.lock ./
+
+# Install CPU version of torch to save size (FastAPI does not run GPU workloads locally)
+RUN $POETRY_HOME/bin/poetry run pip install torch==2.2.0 --index-url https://download.pytorch.org/whl/cpu
+
+# Install the rest of the dependencies
+RUN $POETRY_HOME/bin/poetry install --without dev,test --no-root
+
+# Compile all Python dependencies to bytecode (.pyc) for performance optimization
+RUN python -m compileall /app/.venv/lib/python3.11/site-packages
+
+# Stage 2: Clean runtime image
+FROM python:3.11-slim as runtime
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PATH="/app/.venv/bin:$PATH"
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Add non-root user 'appuser' (UID=1000)
+RUN groupadd -g 1000 appgroup && \
+    useradd -u 1000 -g appgroup -m -s /bin/bash appuser
+
+WORKDIR /app
+
+# Copy python virtual environment and application code, keeping permissions correct
+COPY --from=builder --chown=appuser:appgroup /app/.venv /app/.venv
+COPY --chown=appuser:appgroup . /app
+
+# Pre-compile application code itself to .pyc files
+RUN python -m compileall /app/serving /app/config /app/ingestion /app/preprocessing /app/models /app/rag /app/mlops /app/monitoring /app/infra
+
+USER appuser
+
+EXPOSE 8000
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
+  CMD curl -f http://localhost:8000/v1/health || exit 1
+
+ENTRYPOINT ["uvicorn", "serving.api:app", "--host", "0.0.0.0", "--port", "8000"]

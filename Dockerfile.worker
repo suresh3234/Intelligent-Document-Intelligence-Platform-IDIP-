@@ -1,0 +1,13 @@
+# Dockerfile.worker - Celery GPU worker inheriting from model-cached base image
+FROM idip-base:latest
+
+ENV HF_HOME=/app/models \
+    PATH="/app/.venv/bin:$PATH"
+
+WORKDIR /app
+
+# Copy the rest of the application source code
+COPY . /app
+
+# Define entrypoint to spin up Celery worker listening to heavy queue
+ENTRYPOINT ["celery", "-A", "serving.worker", "worker", "--loglevel=info", "-Q", "heavy"]

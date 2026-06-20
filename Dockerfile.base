@@ -1,0 +1,56 @@
+# Dockerfile.base - Shared GPU base with pre-downloaded model weights
+FROM nvidia/cuda:12.1-runtime-ubuntu22.04
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    HF_HOME=/app/models \
+    POETRY_VERSION=1.8.3 \
+    POETRY_HOME="/opt/poetry" \
+    POETRY_NO_INTERACTION=1 \
+    POETRY_VIRTUALENVS_IN_PROJECT=true
+
+ENV PATH="$POETRY_HOME/bin:$PATH"
+
+# Install system dependencies, adding deadsnakes PPA for Python 3.11
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    software-properties-common \
+    curl \
+    git \
+    build-essential \
+    && add-apt-repository ppa:deadsnakes/ppa -y \
+    && apt-get update && apt-get install -y --no-install-recommends \
+    python3.11 \
+    python3.11-venv \
+    python3.11-dev \
+    ffmpeg \
+    libsm6 \
+    libxext6 \
+    tesseract-ocr \
+    && rm -rf /var/lib/apt/lists/*
+
+# Symlink python to python3.11
+RUN ln -sf /usr/bin/python3.11 /usr/bin/python3 && \
+    ln -sf /usr/bin/python3.11 /usr/bin/python
+
+# Install Poetry
+RUN curl -sSL https://install.python-poetry.org | python3 -
+
+WORKDIR /app
+
+# Copy dependency configuration
+COPY pyproject.toml poetry.lock ./
+
+# Install standard dependencies (excluding dev/test)
+RUN poetry install --without dev,test --no-root
+
+# Copy model pre-download helper script
+COPY infra/scripts/download_models.py ./infra/scripts/
+
+# Create caching folder and run the downloader
+RUN mkdir -p /app/models && \
+    poetry run python infra/scripts/download_models.py
+
+# Keep the virtualenv (.venv) and models cache, but remove compiler tools to save space
+RUN apt-get purge -y --auto-remove build-essential git curl software-properties-common && \
+    rm -rf /root/.cache

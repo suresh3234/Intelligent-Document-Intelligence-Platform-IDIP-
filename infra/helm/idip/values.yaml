@@ -1,0 +1,93 @@
+# values.yaml for IDIP
+environment: production
+
+replicaCount:
+  api: 3
+  worker: 2
+
+image:
+  api:
+    repository: 123456789012.dkr.ecr.us-west-2.amazonaws.com/idip-api
+    tag: latest
+    pullPolicy: IfNotPresent
+  worker:
+    repository: 123456789012.dkr.ecr.us-west-2.amazonaws.com/idip-worker
+    tag: latest
+    pullPolicy: IfNotPresent
+
+service:
+  api:
+    type: LoadBalancer
+    port: 80
+    targetPort: 8000
+  internal:
+    type: ClusterIP
+    port: 8000
+    targetPort: 8000
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+  hosts:
+    - host: idip.example.com
+      paths:
+        - path: /v1/(.*)
+          pathType: ImplementationSpecific
+  tls:
+    - secretName: idip-api-tls
+      hosts:
+        - idip.example.com
+
+resources:
+  api:
+    requests:
+      cpu: "500m"
+      memory: "1Gi"
+    limits:
+      cpu: "2"
+      memory: "4Gi"
+  worker:
+    requests:
+      cpu: "2"
+      memory: "8Gi"
+      nvidia.com/gpu: "1"
+    limits:
+      cpu: "4"
+      memory: "16Gi"
+      nvidia.com/gpu: "1"
+
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 70
+  targetMemoryUtilizationPercentage: 80
+  customMetrics:
+    celeryQueueDepth:
+      enabled: true
+      metricName: celery_queue_depth
+      targetValue: 50
+
+worker:
+  nodeSelector:
+    accelerator: nvidia-gpu
+  tolerations:
+    - key: "nvidia.com/gpu"
+      operator: "Exists"
+      effect: "NoSchedule"
+
+config:
+  VECTOR_DB_PROVIDER: faiss
+  HF_HOME: /app/models
+  S3_RAW_BUCKET: idip-raw-data
+  S3_PROCESSED_BUCKET: idip-processed-data
+  S3_MODEL_ARTIFACTS_BUCKET: idip-model-artifacts
+  DVC_STORE_BUCKET: idip-dvc-store
+
+secretStore:
+  provider: aws-secrets-manager
+  remoteRefKey: idip/production/secrets
